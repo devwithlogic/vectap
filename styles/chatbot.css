@@ -1,0 +1,105 @@
+/* ==========================================================================
+   VECTA: Multilingual MSME Bidder Chatbot Styles
+   ========================================================================== */
+
+.chatbot-launcher-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-850) 0%, var(--saffron-500) 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(11, 37, 69, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 990;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.chatbot-launcher-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 32px rgba(11, 37, 69, 0.45);
+}
+
+.chatbot-modal {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 380px;
+  max-width: calc(100vw - 48px);
+  height: 520px;
+  background: var(--gov-white);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px -10px rgba(11, 37, 69, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 990;
+  border: 1px solid var(--gov-slate-200);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.96);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chatbot-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-850) 100%);
+  color: #FFFFFF;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: var(--gov-slate-50);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble-bot {
+  background: #FFFFFF;
+  border: 1px solid var(--gov-slate-200);
+  border-radius: 12px 12px 12px 2px;
+  padding: 10px 14px;
+  font-size: 0.825rem;
+  color: var(--gov-slate-800);
+  line-height: 1.45;
+  box-shadow: var(--shadow-sm);
+  max-width: 88%;
+}
+
+.chat-bubble-user {
+  background: var(--navy-850);
+  color: #FFFFFF;
+  border-radius: 12px 12px 2px 12px;
+  padding: 10px 14px;
+  font-size: 0.825rem;
+  align-self: flex-end;
+  max-width: 88%;
+}
+
+.checklist-card {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  color: #166534;
+}

@@ -1,8 +1,9 @@
 /**
- * VECTA: Core Data Store (Aggregator for Backward Compatibility)
+ * VECTA: Master Data Registry
+ * Aggregates all modular data models into window.GEM_DATA
  */
 
-window.GEM_DATA = window.GEM_DATA || {
+window.GEM_DATA = {
   tenderInfo: window.GEM_TENDER_INFO,
   portals: window.GEM_PORTALS,
   bidders: window.GEM_BIDDERS,

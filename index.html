@@ -12,17 +12,17 @@
       theme: {
         extend: {
           colors: {
+            navy: {
+              50: '#EFF6FF', 100: '#DBEAFE', 200: '#BFDBFE', 500: '#2563EB',
+              700: '#133E87', 800: '#0F3057', 850: '#0B2545', 900: '#081D38', 950: '#051426'
+            },
+            saffron: {
+              50: '#FFFBEB', 100: '#FEF3C7', 300: '#FBBF24', 400: '#F59E0B', 500: '#D97706', 600: '#B45309'
+            },
             rust: {
-              50: '#FCF4F0',
-              100: '#FADED3',
-              200: '#F2BAA4',
-              300: '#E68E6B',
-              400: '#D87148',
-              500: '#C85A32',
-              600: '#B84A39',
-              700: '#9E382B',
-              800: '#7A291E',
-              900: '#5C1E16',
+              50: '#EFF6FF', 100: '#DBEAFE', 200: '#BFDBFE', 300: '#93C5FD',
+              400: '#2563EB', 500: '#1D4ED8', 600: '#133E87', 700: '#0F3057',
+              800: '#0B2545', 900: '#081D38'
             }
           }
         }
@@ -30,704 +30,93 @@
     }
   </script>
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Custom Rust-and-White GovTech Stylesheet -->
+  <!-- Modular Design System -->
   <link rel="stylesheet" href="styles/rust-theme.css">
 </head>
-<body class="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900">
+<body class="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900">
 
-  <!-- =========================================================================
-       1. Top Government & GeM Navigation Bar
-       ========================================================================= -->
-  <header class="bg-rust-header text-white shadow-md border-b-2 border-rust-500 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        
-        <!-- Brand & Gov Identification -->
-        <div class="flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-rust-700 border border-rust-400 flex items-center justify-center text-white font-black text-lg shadow-inner">
-            <i class="fa-solid fa-scale-balanced text-amber-300"></i>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-base font-extrabold tracking-tight">VECTA <span class="text-amber-300 font-black">AI</span></span>
-              <span class="bg-rust-900 text-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-full border border-rust-500 uppercase tracking-wide">GeM Compliance v2.4</span>
-            </div>
-            <p class="text-[11px] text-rust-200 font-medium">Integrated Bid Compliance & Eligibility Intelligence Engine</p>
-          </div>
-        </div>
+  <!-- 1. Header & Navigation -->
+  <div data-component="navbar"></div>
 
-        <!-- Active Tender Brief Context -->
-        <div class="hidden lg:flex items-center bg-rust-900/60 px-3.5 py-1.5 rounded-xl border border-rust-600/40 text-xs gap-3">
-          <span class="w-2 h-2 rounded-full bg-amber-400 pulse-dot"></span>
-          <div>
-            <span class="text-rust-200 text-[10px] uppercase font-bold tracking-wider block">Active Tender</span>
-            <span class="font-mono text-white font-semibold">GEM/2026/B/892104</span>
-          </div>
-          <span class="text-rust-400">|</span>
-          <div>
-            <span class="text-rust-200 text-[10px] uppercase font-bold tracking-wider block">Est. Value</span>
-            <span class="text-amber-300 font-bold font-mono">₹ 18.50 Cr</span>
-          </div>
-        </div>
+  <!-- 2. Multi-Portal Live Telemetry Ribbon -->
+  <div data-component="portal-ribbon"></div>
 
-        <!-- Procurement Officer Profile & Actions -->
-        <div class="flex items-center gap-3">
-          <button id="btnApplyTenderNav" class="flex items-center gap-1.5 bg-amber-400 hover:bg-amber-300 text-stone-950 px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md border border-amber-300 transition transform hover:scale-102">
-            <i class="fa-solid fa-paper-plane text-stone-900"></i>
-            <span>Apply for Tender</span>
-          </button>
-
-          <button id="btnExportTEC" class="hidden sm:flex items-center gap-1.5 bg-rust-600 hover:bg-rust-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-sm border border-rust-400 transition">
-            <i class="fa-solid fa-file-lines text-amber-200"></i>
-            <span>Export TEC Report</span>
-          </button>
-
-          <div class="flex items-center gap-2.5 pl-2 border-l border-rust-600">
-            <div class="w-8 h-8 rounded-full bg-rust-600 border border-rust-400 flex items-center justify-center text-white text-xs font-bold">
-              <i class="fa-solid fa-user-shield"></i>
-            </div>
-            <div class="hidden md:block text-left">
-              <p class="text-xs font-bold leading-tight text-white">Shri R. K. Sharma</p>
-              <p class="text-[10px] text-rust-200">Senior Director (Procurement)</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </header>
-
-  <!-- =========================================================================
-       2. Multi-Portal Integration Live Telemetry Ribbon (12 Connected Portals)
-       ========================================================================= -->
-  <div class="bg-white border-b border-stone-200 py-2 shadow-xs overflow-x-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3 min-w-max">
-      <span class="text-[11px] font-bold text-rust-800 uppercase tracking-wider flex items-center gap-1.5">
-        <i class="fa-solid fa-network-wired text-rust-600"></i>
-        <span>Portals (12):</span>
-      </span>
-      <div id="portalRibbon" class="flex items-center gap-2">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Content Container -->
+  <!-- 3. Main Dashboard Workspace -->
   <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <!-- Preface / Hero Banner -->
+    <div data-component="preface-hero"></div>
 
-    <!-- =========================================================================
-         3. PREFACE / HERO HEADER: "The Paper Chaos Reality vs. VECTA AI"
-            Featuring the user's uploaded photo prominently as the editorial preface!
-         ========================================================================= -->
-    <section class="preface-hero-container p-6 sm:p-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-        
-        <!-- Left: Editorial Context & Narrative -->
-        <div class="lg:col-span-7 space-y-4">
-          <div class="inline-flex items-center gap-2 paper-chaos-tag px-3 py-1 rounded-full text-xs font-semibold">
-            <i class="fa-solid fa-triangle-exclamation text-amber-300"></i>
-            <span>The Procurement Bottleneck in India</span>
-          </div>
-
-          <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white leading-snug">
-            From <span class="text-amber-200 underline decoration-rust-400 underline-offset-4">Paper Chaos</span> to Precision AI Verification
-          </h1>
-
-          <p class="text-xs sm:text-sm text-rust-100 leading-relaxed">
-            Government procurement through GeM historically meant examining thousands of physical pages bound in twine—cross-referencing Udyam certificates, GST return filings, audited balance sheets, and debarment circulars by hand.
-          </p>
-
-          <p class="text-xs sm:text-sm text-rust-100 leading-relaxed">
-            <strong>VECTA</strong> eliminates this 14-day manual paperwork ordeal. It connects in real-time to <strong>12 statutory Government portals</strong>, performs automated algorithmic cross-checks, identifies fraudulent submissions, and empowers Procurement Officers with clear decision support.
-          </p>
-
-          <!-- Impact Metrics Grid in Rust/Ivory theme -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-            <div class="bg-black/25 backdrop-blur-md p-3 rounded-xl border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-black text-amber-300 block">60–80%</span>
-              <span class="text-[11px] text-rust-200 font-medium">Effort Reduction</span>
-            </div>
-            <div class="bg-black/25 backdrop-blur-md p-3 rounded-xl border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-black text-white block">&lt; 4.5 Min</span>
-              <span class="text-[11px] text-rust-200 font-medium">Evaluation Speed</span>
-            </div>
-            <div class="bg-black/25 backdrop-blur-md p-3 rounded-xl border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-black text-amber-300 block">12 Portals</span>
-              <span class="text-[11px] text-rust-200 font-medium">Auto-Synced</span>
-            </div>
-            <div class="bg-black/25 backdrop-blur-md p-3 rounded-xl border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-black text-white block">100%</span>
-              <span class="text-[11px] text-rust-200 font-medium">Audit Traceability</span>
-            </div>
-          </div>
-
-          <div class="pt-2 flex flex-wrap items-center gap-3">
-            <button id="btnApplyTenderHero" class="bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold px-4 py-2 rounded-xl text-xs shadow-lg transition flex items-center gap-2 border border-amber-300 transform hover:scale-102">
-              <i class="fa-solid fa-file-signature text-sm"></i>
-              <span>Apply for this Tender (Bidder Portal)</span>
-            </button>
-
-            <button id="prefaceToggleBtn" class="text-xs text-amber-200 hover:text-white font-semibold underline underline-offset-2 flex items-center gap-1.5 ml-1">
-              <i class="fa-solid fa-circle-info"></i> Why VECTA? (The Paperwork Crisis)
-            </button>
-          </div>
-        </div>
-
-        <!-- Right: The Uploaded Photo Featured in the Preface / Header -->
-        <div class="lg:col-span-5">
-          <div class="preface-image-wrapper group relative">
-            <img 
-              src="assets/paper_chaos_legacy.jpg" 
-              alt="Legacy manual procurement documents bundled in piles - The verification bottleneck" 
-              class="w-full h-64 sm:h-72 object-cover object-center group-hover:scale-105 transition duration-500"
-            />
-            
-            <!-- Overlay Badges on Image -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-4">
-              <div class="inline-flex items-center gap-1.5 bg-rose-950/90 text-rose-200 text-[11px] font-bold px-3 py-1 rounded-md border border-rose-600/50 backdrop-blur-sm self-start mb-1.5">
-                <i class="fa-solid fa-clock-rotate-left"></i> The Legacy Reality
-              </div>
-              <p class="text-xs text-white font-medium drop-shadow-md">
-                Physical paper bundles tied in twine, manual fatigue, missed debarments & forged certificates.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Expandable Preface Narrative Details -->
-      <div id="prefaceDetails" class="hidden mt-6 pt-5 border-t border-rust-500/40 text-xs text-rust-100 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-black/20 p-3.5 rounded-xl border border-white/10">
-          <h4 class="font-bold text-amber-200 mb-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-triangle-exclamation"></i> The Problem Statement
-          </h4>
-          <p class="text-stone-200 leading-relaxed">
-            Procurement officers must cross-check 12+ statutory registrations (GSTN, Udyam, EPFO, ESIC, MCA21, Make in India, CPPP). Manual scrutiny causes 14 to 21-day evaluation delays and severe oversight risks.
-          </p>
-        </div>
-        <div class="bg-black/20 p-3.5 rounded-xl border border-white/10">
-          <h4 class="font-bold text-amber-200 mb-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> The AI Solution
-          </h4>
-          <p class="text-stone-200 leading-relaxed">
-            AI Document Engine extracts submitted certificates, runs cryptographic verification via DigiLocker PKI, queries live portal APIs, and flags mismatches (e.g. claimed local content vs actual BoM).
-          </p>
-        </div>
-        <div class="bg-black/20 p-3.5 rounded-xl border border-white/10">
-          <h4 class="font-bold text-amber-200 mb-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-gavel"></i> Decision Support Mandate
-          </h4>
-          <p class="text-stone-200 leading-relaxed">
-            AI serves strictly as an intelligent decision-support system. As mandated under GFR 2017 Rule 153, the ultimate qualification or disqualification power resides with the Procurement Officer.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         4. Main Dashboard Grid: Bidders Navigation (Left) + Verification Console (Right)
-         ========================================================================= -->
+    <!-- Bidder Grid: Directory (Left) + Detail Console (Right) -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div data-component="sidebar" class="lg:col-span-4"></div>
 
-      <!-- LEFT COLUMN: Bidder Directory & Filters (4 cols) -->
-      <aside class="lg:col-span-4 space-y-4">
-
-        <!-- Search and Quick Filter Box -->
-        <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-3">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-xs uppercase tracking-wider text-rust-900 flex items-center gap-1.5">
-              <i class="fa-solid fa-users-viewfinder text-rust-600"></i>
-              Bidders Under Evaluation (4)
-            </h3>
-            <span class="text-[11px] font-semibold text-stone-500 font-mono">Tender Closes: 18-Sep</span>
-          </div>
-
-          <!-- Search Input -->
-          <div class="relative">
-            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-stone-400 text-xs"></i>
-            <input 
-              id="bidderSearch" 
-              type="text" 
-              placeholder="Search company, GSTIN, PAN..." 
-              class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-rust-500 focus:border-rust-500 bg-stone-50"
-            />
-          </div>
-
-          <!-- Risk Level Filter Pills -->
-          <div class="flex items-center gap-1.5 pt-1 text-[11px]">
-            <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-rust-700 text-white font-bold transition" data-risk="ALL">All</button>
-            <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-white text-stone-700 hover:border-rust-400 transition" data-risk="LOW">Low</button>
-            <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-white text-stone-700 hover:border-rust-400 transition" data-risk="MEDIUM">Med</button>
-            <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-white text-stone-700 hover:border-rust-400 transition" data-risk="CRITICAL">Critical</button>
-          </div>
-        </div>
-
-        <!-- Bidder Cards List -->
-        <div id="bidderList" class="space-y-2">
-          <!-- Rendered dynamically by app.js -->
-        </div>
-
-        <!-- Tender Conditions Reference Card -->
-        <div class="bg-rust-subtle p-4 rounded-xl border border-rust-200 text-xs space-y-2">
-          <h4 class="font-bold text-rust-900 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-            <i class="fa-solid fa-clipboard-check text-rust-600"></i>
-            Tender Eligibility Mandates
-          </h4>
-          <div class="space-y-1 text-stone-700 text-[11px]">
-            <div class="flex justify-between">
-              <span class="text-stone-500">MII Requirement:</span>
-              <span class="font-semibold text-rust-800">Class-I (≥ 50% Local)</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-stone-500">Min. 3-Yr Turnover:</span>
-              <span class="font-semibold text-stone-800">₹ 6.00 Cr (MSME Exempt)</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-stone-500">EMD Amount:</span>
-              <span class="font-semibold text-stone-800">₹ 37.0 Lakhs (Udyam Exempt)</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-stone-500">MAF Requirement:</span>
-              <span class="font-semibold text-stone-800">Mandatory OEM Backing</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bidder Direct Action Box -->
-        <div class="bg-white p-4 rounded-xl border-2 border-dashed border-rust-300 hover:border-rust-500 transition text-xs space-y-2.5 shadow-sm">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] uppercase font-extrabold text-rust-800 tracking-wider flex items-center gap-1">
-              <i class="fa-solid fa-cloud-arrow-up text-rust-600"></i> Bidder Gateway
-            </span>
-            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Bidding Open</span>
-          </div>
-          <h5 class="font-bold text-stone-900 text-xs">Want to Apply for this Tender?</h5>
-          <p class="text-[11px] text-stone-500 leading-relaxed">Submit your statutory details, test your Make-in-India score with AI Pre-Check, and participate.</p>
-          <button id="btnApplyTenderSidebar" class="w-full bg-rust-700 hover:bg-rust-800 text-white font-bold py-2.5 px-3 rounded-lg text-xs shadow-sm transition flex items-center justify-center gap-2">
-            <i class="fa-solid fa-file-signature text-amber-300"></i>
-            <span>Apply for Tender GEM/2026/B/892104</span>
-          </button>
-        </div>
-
-      </aside>
-
-      <!-- RIGHT COLUMN: Active Bidder Deep-Dive Verification Console (8 cols) -->
-      <section id="bidderDetail" class="lg:col-span-8 bg-white rounded-xl border border-stone-200 shadow-sm overflow-hidden">
-
-        <!-- Bidder Header Banner -->
-        <div class="p-6 bg-gradient-to-r from-white via-rust-50/50 to-white border-b border-stone-200">
-          <div class="flex flex-wrap items-start justify-between gap-4">
-            
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <span class="bg-rust-100 text-rust-800 text-[11px] font-bold px-2 py-0.5 rounded border border-rust-300 uppercase">Selected Bidder</span>
-                <span id="detailRiskBadge" class="text-xs font-bold px-3 py-0.5 rounded-full badge-low-risk">LOW RISK</span>
-                <span id="detailRecBadge" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300">REC: QUALIFY</span>
-              </div>
-              
-              <h2 id="detailBidderName" class="text-xl font-black text-stone-900 leading-tight">
-                Bharat Cloud Tech Solutions Ltd
-              </h2>
-              
-              <div id="detailBidderMeta" class="text-xs text-stone-500 flex flex-wrap items-center gap-y-1 pt-0.5">
-                <!-- Populated by app.js -->
-              </div>
-            </div>
-
-            <!-- Score & Simulation Button -->
-            <div class="flex items-center gap-4">
-              <div class="text-right bg-white p-3 rounded-xl border border-stone-200 shadow-xs">
-                <span class="text-[10px] uppercase font-bold text-stone-500 block">Compliance Score</span>
-                <span id="detailScoreValue" class="text-2xl font-black text-emerald-700">96/100</span>
-              </div>
-
-              <button id="btnStartSimulation" class="px-3.5 py-2.5 rounded-xl bg-rust-700 hover:bg-rust-800 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
-                <i class="fa-solid fa-arrows-rotate"></i>
-                <span>Re-Verify Live</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Verification Console Navigation Tabs in Rust Theme -->
-        <div class="border-b border-stone-200 px-6 flex items-center gap-6 overflow-x-auto bg-stone-50/50">
-          <button class="tab-btn active py-3.5 text-xs flex items-center gap-2" data-tab="cross-check">
-            <i class="fa-solid fa-code-compare text-rust-600"></i>
-            <span>AI Cross-Checks & Discrepancies</span>
-          </button>
-          
-          <button class="tab-btn py-3.5 text-xs flex items-center gap-2" data-tab="documents">
-            <i class="fa-solid fa-file-shield text-rust-600"></i>
-            <span>DigiLocker OCR Inspector</span>
-          </button>
-          
-          <button class="tab-btn py-3.5 text-xs flex items-center gap-2" data-tab="checklist">
-            <i class="fa-solid fa-list-check text-rust-600"></i>
-            <span>Statutory Checklist</span>
-          </button>
-          
-          <button class="tab-btn py-3.5 text-xs flex items-center gap-2" data-tab="decision">
-            <i class="fa-solid fa-gavel text-rust-600"></i>
-            <span>Officer Decision Workspace</span>
-          </button>
-          
-          <button class="tab-btn py-3.5 text-xs flex items-center gap-2" data-tab="audit">
-            <i class="fa-solid fa-fingerprint text-rust-600"></i>
-            <span>Audit Trail Ledger</span>
-          </button>
-        </div>
-
-        <!-- Tab Contents Viewport -->
-        <div id="tabContentContainer" class="p-6">
-          <!-- Dynamic Content Rendered Here -->
-        </div>
-
+      <section id="bidderDetail" class="lg:col-span-8 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div data-component="bidder-header"></div>
+        <div id="tabContentContainer" class="p-6"></div>
       </section>
-
     </div>
-
   </main>
 
-  <!-- =========================================================================
-       5. Footer with National Emblems & Policy References
-       ========================================================================= -->
-  <footer class="bg-white border-t border-stone-200 py-6 text-xs text-stone-500 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-md bg-rust-700 text-white flex items-center justify-center font-bold text-xs">
-          <i class="fa-solid fa-building-columns"></i>
-        </div>
-        <div>
-          <p class="font-semibold text-stone-800">VECTA • Government e-Marketplace (GeM)</p>
-          <p class="text-[11px] text-stone-400">Integrated Decision-Support Platform under GFR 2017 & DPIIT Public Procurement Order</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-4 text-[11px] font-mono">
-        <span>Security: TLS 1.3 / AES-256</span>
-        <span>•</span>
-        <span>NeGD DigiLocker PKI Enabled</span>
-        <span>•</span>
-        <span>CPPP Debarment Index v4</span>
-      </div>
-    </div>
-  </footer>
+  <!-- 4. Footer -->
+  <div data-component="footer"></div>
 
-  <!-- =========================================================================
-       6. Interactive Modals
-       ========================================================================= -->
+  <!-- 5. 3-Dot Drawer, Modals & Chatbot -->
+  <div data-component="drawer"></div>
+  <div data-component="modal-simulation"></div>
+  <div data-component="modal-document"></div>
+  <div data-component="modal-apply"></div>
+  <div data-component="modal-report"></div>
+  <div data-component="modal-forgery"></div>
+  <div data-component="chatbot"></div>
 
-  <!-- Modal 1: Live Multi-Portal Verification Simulation -->
-  <div id="simulationModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-stone-900 border border-rust-500/50 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl text-white">
-      
-      <!-- Simulation Modal Header -->
-      <div class="p-5 border-b border-stone-800 flex items-center justify-between bg-stone-950">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-rust-700 flex items-center justify-center text-white">
-            <i class="fa-solid fa-microchip-ai pulse-dot"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-sm text-white">VECTA Live Multi-Portal Handshake</h3>
-            <p class="text-[11px] text-stone-400">Executing automated verification across 12 statutory Government registries...</p>
-          </div>
-        </div>
-        <span id="simProgressPercent" class="font-mono text-sm font-bold text-amber-400">0%</span>
-      </div>
+  <!-- 6. Notifications -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 space-y-2 pointer-events-none"></div>
 
-      <!-- Animated Progress Bar in Rust -->
-      <div class="w-full bg-stone-800 h-2">
-        <div id="simProgressBar" class="bg-gradient-to-r from-rust-600 via-amber-500 to-emerald-500 h-2 transition-all duration-300 w-0"></div>
-      </div>
+  <!-- Component Template Loader -->
+  <script src="components/component-loader.js"></script>
 
-      <div class="p-5 space-y-4">
-        <div class="flex items-center justify-between text-xs font-mono text-stone-400">
-          <span>Active Target: <strong id="simCurrentStage" class="text-white">Connecting...</strong></span>
-          <span class="text-emerald-400"><i class="fa-solid fa-shield-halved mr-1"></i>Encrypted SSL Pipeline</span>
-        </div>
+  <!-- Modular Data Models -->
+  <script src="js/data/tender.js"></script>
+  <script src="js/data/portals.js"></script>
+  <script src="js/data/bidders-qualified.js"></script>
+  <script src="js/data/bidders-flagged.js"></script>
+  <script src="js/data/bidders.js"></script>
+  <script src="js/data/criteria.js"></script>
+  <script src="js/data/collusion-data.js"></script>
+  <script src="js/data/xai-data.js"></script>
+  <script src="js/data/forgery-data.js"></script>
+  <script src="js/data/lifecycle-data.js"></script>
+  <script src="js/data/chatbot-data.js"></script>
+  <script src="js/data/index.js"></script>
 
-        <!-- Terminal Console Log -->
-        <div id="simLogConsole" class="bg-black/90 p-4 rounded-xl border border-stone-800 h-64 overflow-y-auto font-mono text-xs space-y-1">
-          <!-- Live logs injected here -->
-        </div>
+  <!-- Modular Services -->
+  <script src="js/services/scoring.js"></script>
+  <script src="js/services/simulation.js"></script>
+  <script src="js/services/report.js"></script>
 
-        <!-- Modal Actions -->
-        <div class="flex items-center justify-end pt-2">
-          <button id="simCloseBtn" class="px-5 py-2 rounded-xl bg-rust-700 hover:bg-rust-600 text-white font-bold text-xs transition">
-            Close & Review Results
-          </button>
-        </div>
-      </div>
+  <!-- Modular UI Views -->
+  <script src="js/ui/toast.js"></script>
+  <script src="js/ui/portals-view.js"></script>
+  <script src="js/ui/bidder-list-view.js"></script>
+  <script src="js/ui/tab-crosscheck.js"></script>
+  <script src="js/ui/tab-documents.js"></script>
+  <script src="js/ui/tab-checklist.js"></script>
+  <script src="js/ui/tab-decision.js"></script>
+  <script src="js/ui/tab-audit.js"></script>
 
-    </div>
-  </div>
+  <!-- Modular Modal & USP Controllers -->
+  <script src="js/ui/modal-simulation.js"></script>
+  <script src="js/ui/modal-document.js"></script>
+  <script src="js/ui/modal-apply.js"></script>
+  <script src="js/ui/modal-report.js"></script>
 
-  <!-- Modal 2: Document Inspection & DigiLocker PKI Details -->
-  <div id="documentModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div id="documentModalContent" class="bg-white rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl border border-stone-200">
-      <!-- Injected by app.js -->
-    </div>
-  </div>
-
-  <!-- Modal 4: Bidder Application & Pre-Verification Portal -->
-  <div id="applyTenderModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-stone-300">
-      
-      <!-- Modal Header -->
-      <div class="p-5 border-b border-stone-200 flex items-start justify-between bg-gradient-to-r from-rust-900 to-rust-800 text-white">
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="bg-amber-400 text-stone-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase">Bidder Portal</span>
-            <span class="text-xs text-rust-200 font-mono">Tender GEM/2026/B/892104</span>
-          </div>
-          <h3 class="font-black text-lg text-white mt-1">Apply for Tender & Upload Bid Documents</h3>
-          <p class="text-xs text-rust-200 mt-0.5">Automated AI Pre-Screening against 12 statutory government databases.</p>
-        </div>
-        <button id="closeApplyModalBtn" class="text-rust-200 hover:text-white text-xl px-2 font-bold">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Modal Body (Form) -->
-      <div class="p-6 overflow-y-auto flex-1 space-y-5 text-xs">
-        
-        <!-- Tender Context Notice -->
-        <div class="p-3.5 rounded-xl bg-rust-50 border border-rust-200 flex items-start gap-3">
-          <i class="fa-solid fa-circle-info text-rust-700 text-sm mt-0.5"></i>
-          <div>
-            <span class="font-bold text-rust-900">Procuring Entity:</span>
-            <span class="text-rust-800"> National Informatics Centre Services Inc. (NICSI) / MeitY</span>
-            <div class="mt-1 text-[11px] text-stone-600 flex flex-wrap gap-x-4">
-              <span><strong>Tender Value:</strong> ₹ 18.50 Cr</span>
-              <span><strong>MII Mandate:</strong> Class-I Local Supplier (≥ 50%)</span>
-              <span><strong>EMD:</strong> ₹ 37.0 Lakhs (MSME Exempt)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Form Section 1: Entity Details -->
-        <div>
-          <h4 class="font-bold text-xs uppercase tracking-wider text-rust-900 mb-3 flex items-center gap-1.5 border-b border-stone-200 pb-1.5">
-            <i class="fa-solid fa-building text-rust-600"></i>
-            1. Bidder Enterprise & Statutory Identifiers
-          </h4>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyCompanyName">
-                Legal Entity Name *
-              </label>
-              <input id="applyCompanyName" type="text" value="Zenith Infra-Tech Systems Pvt Ltd" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-sans text-xs bg-stone-50" placeholder="e.g. Acme Cloud Solutions Ltd" required />
-            </div>
-
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyEntityType">
-                Enterprise Classification *
-              </label>
-              <select id="applyEntityType" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-sans text-xs bg-stone-50">
-                <option value="Private Limited Company">Private Limited Company</option>
-                <option value="Public Limited Company">Public Limited Company</option>
-                <option value="Micro / Small Enterprise (MSME - Udyam)" selected>Micro / Small Enterprise (MSME - Udyam)</option>
-                <option value="DPIIT Recognized Startup">DPIIT Recognized Startup</option>
-                <option value="Partnership / LLP">Partnership / LLP</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyGSTIN">
-                GSTIN (15 Digits) *
-              </label>
-              <input id="applyGSTIN" type="text" value="07AAECZ9123M1Z8" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="e.g. 07AABCB8821L1Z4" required />
-            </div>
-
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyPAN">
-                Corporate PAN *
-              </label>
-              <input id="applyPAN" type="text" value="AAECZ9123M" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="e.g. AABCB8821L" required />
-            </div>
-
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyUdyam">
-                Udyam Registration No. (For MSME Exemption)
-              </label>
-              <input id="applyUdyam" type="text" value="UDYAM-DL-03-0099881" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="e.g. UDYAM-DL-03-0048192" />
-            </div>
-
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyCIN">
-                Company CIN (MCA21)
-              </label>
-              <input id="applyCIN" type="text" value="U72900DL2022PTC394812" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="e.g. L72200DL2012PLC238910" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Form Section 2: Declarations & Commercial Quote -->
-        <div>
-          <h4 class="font-bold text-xs uppercase tracking-wider text-rust-900 mb-3 flex items-center gap-1.5 border-b border-stone-200 pb-1.5">
-            <i class="fa-solid fa-file-invoice-dollar text-rust-600"></i>
-            2. Commercial Quote & Make-in-India Declaration
-          </h4>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyBidQuote">
-                Total Financial Bid Quote (₹) *
-              </label>
-              <input id="applyBidQuote" type="text" value="₹ 17,25,00,000" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="e.g. ₹ 17,50,00,000" required />
-              <span class="text-[10px] text-stone-500 mt-0.5 block">Estimated Tender Value: ₹ 18.50 Cr</span>
-            </div>
-
-            <div>
-              <label class="block font-semibold text-stone-700 mb-1" for="applyLocalContent">
-                Self-Declared Local Content Percentage (%) *
-              </label>
-              <input id="applyLocalContent" type="number" min="0" max="100" value="68" class="w-full p-2.5 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="e.g. 68" required />
-              <span class="text-[10px] text-emerald-700 font-medium mt-0.5 block">Class-I Local Supplier (≥ 50% threshold met)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Form Section 3: Statutory Document Uploads / DigiLocker -->
-        <div>
-          <div class="flex items-center justify-between mb-3 border-b border-stone-200 pb-1.5">
-            <h4 class="font-bold text-xs uppercase tracking-wider text-rust-900 flex items-center gap-1.5">
-              <i class="fa-solid fa-folder-open text-rust-600"></i>
-              3. Required Statutory Uploads (DigiLocker Linked)
-            </h4>
-            <button type="button" id="btnAutoFetchDigilocker" class="text-rust-700 hover:text-rust-900 font-bold flex items-center gap-1 text-[11px] bg-rust-50 border border-rust-300 px-2.5 py-1 rounded-md shadow-xs">
-              <i class="fa-solid fa-bolt text-amber-500"></i> Auto-Fetch via DigiLocker PKI
-            </button>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <div class="p-2.5 rounded-lg border border-stone-200 bg-stone-50 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-pdf text-rust-700 text-base"></i>
-                <div>
-                  <p class="font-semibold text-stone-800 text-[11px]">Udyam MSME Certificate</p>
-                  <span class="text-[10px] text-emerald-700 font-bold"><i class="fa-solid fa-check mr-1"></i>DigiLocker Verified</span>
-                </div>
-              </div>
-              <span class="text-[10px] font-mono text-stone-400">1.8 MB</span>
-            </div>
-
-            <div class="p-2.5 rounded-lg border border-stone-200 bg-stone-50 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-pdf text-rust-700 text-base"></i>
-                <div>
-                  <p class="font-semibold text-stone-800 text-[11px]">GST Registration (REG-06)</p>
-                  <span class="text-[10px] text-emerald-700 font-bold"><i class="fa-solid fa-check mr-1"></i>DigiLocker Verified</span>
-                </div>
-              </div>
-              <span class="text-[10px] font-mono text-stone-400">2.1 MB</span>
-            </div>
-
-            <div class="p-2.5 rounded-lg border border-stone-200 bg-stone-50 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-pdf text-rust-700 text-base"></i>
-                <div>
-                  <p class="font-semibold text-stone-800 text-[11px]">MII Local Content CA Certificate</p>
-                  <span class="text-[10px] text-emerald-700 font-bold"><i class="fa-solid fa-check mr-1"></i>Audited UDIN Present</span>
-                </div>
-              </div>
-              <span class="text-[10px] font-mono text-stone-400">3.4 MB</span>
-            </div>
-
-            <div class="p-2.5 rounded-lg border border-stone-200 bg-stone-50 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-pdf text-rust-700 text-base"></i>
-                <div>
-                  <p class="font-semibold text-stone-800 text-[11px]">OEM Authorization Form (MAF)</p>
-                  <span class="text-[10px] text-emerald-700 font-bold"><i class="fa-solid fa-check mr-1"></i>Genuine Hash Checked</span>
-                </div>
-              </div>
-              <span class="text-[10px] font-mono text-stone-400">1.9 MB</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- AI Pre-Check Diagnostic Box -->
-        <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-50 via-white to-emerald-50 border border-emerald-200">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold flex-shrink-0">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <div>
-              <h5 class="font-bold text-xs text-emerald-900">VECTA AI Instant Pre-Check Prediction: 94% Pass Probability</h5>
-              <p class="text-[11px] text-stone-600 mt-0.5 leading-relaxed">
-                Your declared GSTIN, Udyam registration, and 68% Make-in-India content satisfy all mandatory statutory thresholds for Tender GEM/2026/B/892104. Zero debarment records found.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="p-4 border-t border-stone-200 flex items-center justify-between bg-stone-50">
-        <span class="text-[11px] text-stone-500 font-mono">
-          <i class="fa-solid fa-lock mr-1 text-rust-600"></i> e-Sign: IT Act 2000 Compliant
-        </span>
-
-        <div class="flex items-center gap-2.5">
-          <button type="button" id="cancelApplyBtn" class="px-4 py-2 rounded-lg border border-stone-300 text-stone-700 hover:bg-stone-100 text-xs font-semibold transition">
-            Cancel
-          </button>
-          <button type="button" id="submitApplyBidBtn" class="px-5 py-2.5 rounded-lg bg-rust-700 hover:bg-rust-800 text-white text-xs font-bold shadow-md transition flex items-center gap-2">
-            <i class="fa-solid fa-paper-plane text-amber-300"></i>
-            <span>Submit Bid & Run Multi-Portal Verification</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Modal 3: Printable Official GeM Technical Evaluation Committee (TEC) Report -->
-  <div id="reportModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-stone-300">
-      
-      <div class="p-4 border-b border-stone-200 flex items-center justify-between bg-rust-50">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-file-contract text-rust-700 text-lg"></i>
-          <span class="font-bold text-sm text-rust-900">Official GeM TEC Evaluation Report Preview</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <button id="btnPrintReportBtn" class="px-3.5 py-1.5 bg-rust-700 text-white text-xs font-bold rounded-lg shadow-sm hover:bg-rust-800 transition flex items-center gap-1.5">
-            <i class="fa-solid fa-print"></i> Print / Save as PDF
-          </button>
-          <button id="closeReportModalBtn" class="text-stone-500 hover:text-stone-800 text-lg px-2">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      </div>
-
-      <div id="reportModalContent" class="p-6 overflow-y-auto flex-1">
-        <!-- Rendered by verificationEngine.generateTECSummaryHTML() -->
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Floating Toast Notifications Container -->
-  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 space-y-2 pointer-events-none">
-    <!-- Toasts injected here -->
-  </div>
-
-  <!-- Application Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/verification-engine.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Main Orchestration -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

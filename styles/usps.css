@@ -1,0 +1,101 @@
+/* ==========================================================================
+   VECTA: Styles for 7 Unique Selling Propositions (USPs)
+   ========================================================================== */
+
+/* USP 1: Collusion & Cartel Radar Graph */
+.cartel-canvas-container {
+  background: radial-gradient(circle at center, #0B2545 0%, #051426 100%);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(191, 219, 254, 0.2);
+}
+
+.cartel-node {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.cartel-node:hover {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));
+  transform: scale(1.08);
+}
+
+.cartel-edge-danger {
+  stroke: #EF4444;
+  stroke-dasharray: 6 3;
+  animation: dashAnimation 1.5s linear infinite;
+}
+
+@keyframes dashAnimation {
+  to { stroke-dashoffset: -18; }
+}
+
+/* USP 2: Explainable AI (XAI) Dashboard */
+.xai-waterfall-bar {
+  height: 22px;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #FFF;
+}
+.xai-pos { background: linear-gradient(90deg, #10B981, #059669); }
+.xai-neg { background: linear-gradient(90deg, #EF4444, #DC2626); }
+
+/* USP 3: Forensic Document Tampering Inspector */
+.forensic-viewer-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: #0A0F1D;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.ela-heatmap {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.ela-anomaly-box {
+  position: absolute;
+  border: 2px solid #EF4444;
+  background: rgba(239, 68, 68, 0.25);
+  animation: pulseBox 1.6s infinite ease-in-out;
+}
+
+@keyframes pulseBox {
+  0%, 100% { box-shadow: 0 0 5px #EF4444; }
+  50% { box-shadow: 0 0 16px #EF4444; }
+}
+
+/* USP 4: Post-Award Continuous Monitoring */
+.lifecycle-step {
+  position: relative;
+  padding-left: 28px;
+}
+.lifecycle-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--navy-600);
+  border: 2px solid #FFF;
+  box-shadow: 0 0 0 2px var(--navy-200);
+}
+.lifecycle-step.active::before {
+  background: var(--saffron-500);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35);
+}
+.lifecycle-step.warning::before {
+  background: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
+}

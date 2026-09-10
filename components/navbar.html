@@ -1,0 +1,64 @@
+<!-- Top Government & GeM Navigation Bar -->
+<header class="bg-navy-header text-white shadow-md border-b-2 border-amber-500 sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Brand & Gov Identification -->
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-lg bg-blue-900 border border-blue-600 flex items-center justify-center text-white font-black text-lg shadow-inner">
+          <i class="fa-solid fa-scale-balanced text-amber-400"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-base font-extrabold tracking-tight text-white">VECTA <span class="text-amber-400 font-black">AI</span></span>
+            <span class="bg-blue-950 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-800 uppercase tracking-wide">GeM Compliance v2.4</span>
+          </div>
+          <p class="text-[11px] text-blue-200 font-medium">Integrated Bid Compliance & Eligibility Intelligence Engine</p>
+        </div>
+      </div>
+
+      <!-- Active Tender Context -->
+      <div class="hidden lg:flex items-center bg-blue-950/70 px-3.5 py-1.5 rounded-xl border border-blue-800/60 text-xs gap-3">
+        <span class="w-2 h-2 rounded-full bg-amber-400 pulse-dot"></span>
+        <div>
+          <span class="text-blue-200 text-[10px] uppercase font-bold tracking-wider block">Active Tender</span>
+          <span class="font-mono text-white font-semibold">GEM/2026/B/892104</span>
+        </div>
+        <span class="text-blue-400">|</span>
+        <div>
+          <span class="text-blue-200 text-[10px] uppercase font-bold tracking-wider block">Est. Value</span>
+          <span class="text-amber-300 font-bold font-mono">₹ 18.50 Cr</span>
+        </div>
+      </div>
+
+      <!-- Actions & 3-Dot Offcanvas Trigger -->
+      <div class="flex items-center gap-2.5">
+        <button id="btnApplyTenderNav" class="flex items-center gap-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 px-3 py-1.5 rounded-lg text-xs font-bold shadow-md border border-amber-300 transition transform hover:scale-102">
+          <i class="fa-solid fa-paper-plane text-slate-900"></i>
+          <span>Apply</span>
+        </button>
+
+        <button id="btnExportTEC" class="hidden sm:flex items-center gap-1.5 bg-blue-800 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-sm border border-blue-600 transition">
+          <i class="fa-solid fa-file-lines text-amber-300"></i>
+          <span>Export TEC Report</span>
+        </button>
+
+        <div class="flex items-center gap-2 pl-2 border-l border-blue-800">
+          <div class="w-8 h-8 rounded-full bg-blue-800 border border-blue-600 flex items-center justify-center text-white text-xs font-bold">
+            <i class="fa-solid fa-user-shield text-amber-300"></i>
+          </div>
+          <div class="hidden md:block text-left">
+            <p class="text-xs font-bold leading-tight text-white">Shri R. K. Sharma</p>
+            <p class="text-[10px] text-blue-200">Senior Director (Procurement)</p>
+          </div>
+        </div>
+
+        <!-- 3-Dot Action Button -->
+        <button id="btnOpenDrawer" title="Open VECTA Intelligence Suite" class="w-9 h-9 ml-1 rounded-lg bg-blue-900/80 hover:bg-blue-800 text-white flex items-center justify-center transition border border-blue-700 hover:border-amber-400 shadow-sm">
+          <i class="fa-solid fa-ellipsis-vertical text-base text-amber-300"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>

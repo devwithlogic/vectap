@@ -1,0 +1,81 @@
+<!-- LEFT COLUMN: Bidder Directory & Filters -->
+<aside class="lg:col-span-4 space-y-4">
+
+  <!-- Search and Quick Filter Box -->
+  <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-3">
+    <div class="flex items-center justify-between">
+      <h3 class="font-bold text-xs uppercase tracking-wider text-rust-900 flex items-center gap-1.5">
+        <i class="fa-solid fa-users-viewfinder text-rust-600"></i>
+        Bidders Under Evaluation (4)
+      </h3>
+      <span class="text-[11px] font-semibold text-stone-500 font-mono">Tender Closes: 18-Sep</span>
+    </div>
+
+    <!-- Search Input -->
+    <div class="relative">
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-stone-400 text-xs"></i>
+      <input 
+        id="bidderSearch" 
+        type="text" 
+        placeholder="Search company, GSTIN, PAN..." 
+        class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-rust-500 focus:border-rust-500 bg-stone-50"
+      />
+    </div>
+
+    <!-- Risk Level Filter Pills -->
+    <div class="flex items-center gap-1.5 pt-1 text-[11px]">
+      <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-rust-700 text-white font-bold transition" data-risk="ALL">All</button>
+      <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-white text-stone-700 hover:border-rust-400 transition" data-risk="LOW">Low</button>
+      <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-white text-stone-700 hover:border-rust-400 transition" data-risk="MEDIUM">Med</button>
+      <button class="risk-filter-btn px-2.5 py-1 rounded-md border border-stone-300 bg-white text-stone-700 hover:border-rust-400 transition" data-risk="CRITICAL">Critical</button>
+    </div>
+  </div>
+
+  <!-- Bidder Cards List -->
+  <div id="bidderList" class="space-y-2">
+    <!-- Rendered dynamically by bidder-list-view.js -->
+  </div>
+
+  <!-- Tender Conditions Reference Card -->
+  <div class="bg-rust-subtle p-4 rounded-xl border border-rust-200 text-xs space-y-2">
+    <h4 class="font-bold text-rust-900 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+      <i class="fa-solid fa-clipboard-check text-rust-600"></i>
+      Tender Eligibility Mandates
+    </h4>
+    <div class="space-y-1 text-stone-700 text-[11px]">
+      <div class="flex justify-between">
+        <span class="text-stone-500">MII Requirement:</span>
+        <span class="font-semibold text-rust-800">Class-I (≥ 50% Local)</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-stone-500">Min. 3-Yr Turnover:</span>
+        <span class="font-semibold text-stone-800">₹ 6.00 Cr (MSME Exempt)</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-stone-500">EMD Amount:</span>
+        <span class="font-semibold text-stone-800">₹ 37.0 Lakhs (Udyam Exempt)</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-stone-500">MAF Requirement:</span>
+        <span class="font-semibold text-stone-800">Mandatory OEM Backing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bidder Direct Action Box -->
+  <div class="bg-white p-4 rounded-xl border-2 border-dashed border-rust-300 hover:border-rust-500 transition text-xs space-y-2.5 shadow-sm">
+    <div class="flex items-center justify-between">
+      <span class="text-[10px] uppercase font-extrabold text-rust-800 tracking-wider flex items-center gap-1">
+        <i class="fa-solid fa-cloud-arrow-up text-rust-600"></i> Bidder Gateway
+      </span>
+      <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Bidding Open</span>
+    </div>
+    <h5 class="font-bold text-stone-900 text-xs">Want to Apply for this Tender?</h5>
+    <p class="text-[11px] text-stone-500 leading-relaxed">Submit your statutory details, test your Make-in-India score with AI Pre-Check, and participate.</p>
+    <button id="btnApplyTenderSidebar" class="w-full bg-rust-700 hover:bg-rust-800 text-white font-bold py-2.5 px-3 rounded-lg text-xs shadow-sm transition flex items-center justify-center gap-2">
+      <i class="fa-solid fa-file-signature text-amber-300"></i>
+      <span>Apply for Tender GEM/2026/B/892104</span>
+    </button>
+  </div>
+
+</aside>

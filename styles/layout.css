@@ -1,0 +1,75 @@
+/* ==========================================================================
+   VECTA: Layout & Preface Hero Styles
+   Indian GovTech Deep Navy & Saffron Gold
+   ========================================================================== */
+
+/* Header & Banner Gradients */
+.bg-navy-gradient, .bg-rust-gradient {
+  background: linear-gradient(135deg, #081D38 0%, #0B2545 55%, #133E87 100%);
+}
+
+.bg-navy-header, .bg-rust-header {
+  background: linear-gradient(180deg, #051426 0%, #0B2545 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bg-navy-subtle, .bg-rust-subtle {
+  background-color: var(--navy-50);
+}
+
+.border-navy-subtle, .border-rust-subtle {
+  border-color: var(--gov-slate-200);
+}
+
+.border-navy-active, .border-rust-active {
+  border-color: var(--navy-600);
+}
+
+.text-navy-primary, .text-rust-primary {
+  color: var(--navy-850);
+}
+
+.text-navy-dark, .text-rust-dark {
+  color: var(--navy-950);
+}
+
+/* Preface / Hero Banner Styling (Matches User Screenshot) */
+.preface-hero-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #071B33 0%, #0B2B4E 50%, #103B6D 100%);
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -15px rgba(11, 37, 69, 0.35);
+  border: 1px solid rgba(191, 219, 254, 0.25);
+}
+
+.preface-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.preface-image-wrapper:hover {
+  transform: scale(1.015);
+}
+
+.paper-chaos-tag {
+  background: rgba(8, 29, 56, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #FFF;
+}
+
+/* Metric Pulse Dot */
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.65; }
+}
+
+.pulse-dot {
+  animation: pulseGlow 2s infinite ease-in-out;
+}

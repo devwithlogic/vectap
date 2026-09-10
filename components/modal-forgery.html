@@ -1,0 +1,93 @@
+<!-- Modal: Forensic Document Forgery Inspector (USP 3) -->
+<div id="modalForgery" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-4xl w-full shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-purple-950 via-slate-900 to-blue-950 text-white p-4 sm:p-5 flex items-center justify-between border-b border-purple-800/40">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-purple-900 border border-purple-500 flex items-center justify-center text-purple-300 text-lg shadow-inner">
+          <i class="fa-solid fa-fingerprint"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-base font-bold tracking-tight text-white">Forensic Document Tampering Lab</h3>
+            <span class="bg-rose-900/80 text-rose-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-rose-600">FORGERY CONFIRMED (99.4%)</span>
+          </div>
+          <p class="text-xs text-purple-200">Deep PDF Metadata, Pixel-Level ELA &amp; Cryptographic DSC Signature Audit</p>
+        </div>
+      </div>
+      <button id="btnCloseForgeryModal" class="text-slate-400 hover:text-white p-1 rounded-lg transition">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Forensic Analysis Body -->
+    <div class="p-6 overflow-y-auto space-y-6 flex-1 bg-slate-50 text-xs">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
+          <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Metadata Signature</span>
+          <span class="font-bold text-rose-600 block text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-triangle-exclamation"></i> Adobe Photoshop 24.1
+          </span>
+          <p class="text-[11px] text-slate-500 mt-1">Document modified post-creation; Producer tags altered.</p>
+        </div>
+        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
+          <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Pixel ELA Heatmap</span>
+          <span class="font-bold text-rose-600 block text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-layer-group"></i> Spliced Region Detected
+          </span>
+          <p class="text-[11px] text-slate-500 mt-1">Compression variance on Turnover figures &amp; Validity Date.</p>
+        </div>
+        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
+          <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Cryptographic DSC Check</span>
+          <span class="font-bold text-rose-600 block text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-shield-xmark"></i> Certificate Revoked / Invalid
+          </span>
+          <p class="text-[11px] text-slate-500 mt-1">Root CA untrusted; SHA-256 mismatch with CCA repository.</p>
+        </div>
+      </div>
+
+      <!-- Side-by-Side Visual Comparison -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+            <i class="fa-solid fa-code-compare text-purple-600"></i> Side-by-Side Error Level Analysis (ELA)
+          </h4>
+          <span class="text-[11px] text-slate-500">Document: <code>OEM_MAF_Horizon_Signed.pdf</code></span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-slate-200 rounded-lg p-3 bg-slate-100 flex flex-col items-center justify-center text-center">
+            <span class="text-[11px] font-bold text-slate-600 mb-2">Submitted PDF Render</span>
+            <div class="w-full bg-white p-4 border border-slate-300 rounded shadow-inner text-left font-serif text-[11px] space-y-2">
+              <div class="font-bold text-center border-b pb-1 text-slate-800">GLOBAL TELEMATICS OEM AUTHORIZATION</div>
+              <p>We hereby authorize Horizon Telematics Systems as exclusive tender partner for Tender GEM/2026/B/892104.</p>
+              <p class="bg-yellow-100 px-1 border border-yellow-300 font-semibold">Valid until: 31-Dec-2028 (Altered from 2023)</p>
+              <div class="pt-2 text-[10px] text-slate-500">Authorized Signatory: Dr. R. Sen (Director)</div>
+            </div>
+          </div>
+          <div class="border border-slate-800 rounded-lg p-3 bg-black text-white flex flex-col items-center justify-center text-center">
+            <span class="text-[11px] font-bold text-amber-400 mb-2">Error Level Analysis (ELA) Noise Heatmap</span>
+            <div class="w-full bg-slate-950 p-4 border border-purple-900 rounded text-left font-mono text-[11px] space-y-2">
+              <div class="text-center border-b border-slate-800 pb-1 text-slate-500">[HIGH-FREQUENCY NOISE PASS]</div>
+              <p class="text-slate-600">Dark uniform noise baseline across authentic header elements...</p>
+              <p class="bg-rose-950 text-rose-300 px-1 border-2 border-rose-500 font-bold animate-pulse">
+                [ANOMALY DETECTED]: 84.2% compression spike on date field "31-Dec-2028"
+              </p>
+              <div class="pt-2 text-[10px] text-rose-400">Digital Signature Bitmask: INVALID_HASH_SIG</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="p-4 bg-slate-100 border-t border-slate-200 flex justify-end gap-2.5">
+      <button id="btnExportForensicReport" class="px-4 py-2 bg-purple-900 hover:bg-purple-800 text-white font-bold rounded-lg text-xs shadow-sm transition flex items-center gap-1.5">
+        <i class="fa-solid fa-file-pdf text-amber-300"></i>
+        <span>Download Forensic Certificate PDF</span>
+      </button>
+      <button id="btnCloseModalForgeryBottom" class="px-4 py-2 bg-white hover:bg-slate-200 text-slate-700 font-bold rounded-lg text-xs border border-slate-300 transition">
+        Close
+      </button>
+    </div>
+  </div>
+</div>

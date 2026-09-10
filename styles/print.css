@@ -1,0 +1,32 @@
+/* ==========================================================================
+   VECTA: Print Stylesheet
+   Formats Technical Evaluation Committee (TEC) Reports for Print / PDF
+   ========================================================================== */
+
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  .preface-hero-container {
+    box-shadow: none !important;
+    border: 1px solid #9E382B !important;
+    color: #000 !important;
+    background: none !important;
+  }
+  
+  .bidder-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #CCC !important;
+  }
+}

@@ -1,0 +1,78 @@
+<!-- Bidder Header Banner -->
+<div class="p-6 bg-gradient-to-r from-white via-blue-50/40 to-white border-b border-slate-200">
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="bg-blue-100 text-blue-950 text-[11px] font-bold px-2 py-0.5 rounded border border-blue-300 uppercase">Selected Bidder</span>
+        <span id="detailRiskBadge" class="text-xs font-bold px-3 py-0.5 rounded-full badge-low-risk">LOW RISK</span>
+        <span id="detailRecBadge" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300">REC: QUALIFY</span>
+      </div>
+      
+      <h2 id="detailBidderName" class="text-xl font-black text-slate-900 leading-tight">
+        Bharat Cloud Tech Solutions Ltd
+      </h2>
+      
+      <div id="detailBidderMeta" class="text-xs text-slate-500 flex flex-wrap items-center gap-y-1 pt-0.5">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+
+    <!-- Score & Simulation Button -->
+    <div class="flex items-center gap-3">
+      <div class="text-right bg-white p-3 rounded-xl border border-slate-200 shadow-xs">
+        <span class="text-[10px] uppercase font-bold text-slate-500 block">Compliance Score</span>
+        <span id="detailScoreValue" class="text-2xl font-black text-emerald-700">96/100</span>
+      </div>
+
+      <button id="btnStartSimulation" class="px-3.5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
+        <i class="fa-solid fa-arrows-rotate text-amber-300"></i>
+        <span>Re-Verify Live</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Verification Console Navigation Tabs -->
+<div class="border-b border-slate-200 px-6 flex items-center gap-5 overflow-x-auto bg-slate-50/80">
+  <button class="tab-btn active py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="cross-check">
+    <i class="fa-solid fa-code-compare text-blue-800"></i>
+    <span>AI Cross-Checks &amp; Discrepancies</span>
+  </button>
+  
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="collusion">
+    <i class="fa-solid fa-circle-nodes text-rose-600"></i>
+    <span>Collusion Radar (USP 1)</span>
+  </button>
+
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="xai">
+    <i class="fa-solid fa-brain text-blue-700"></i>
+    <span>Explainable AI (USP 2)</span>
+  </button>
+
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="documents">
+    <i class="fa-solid fa-file-shield text-blue-800"></i>
+    <span>DigiLocker OCR Inspector</span>
+  </button>
+  
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="lifecycle">
+    <i class="fa-solid fa-timeline text-amber-600"></i>
+    <span>Post-Award Monitor (USP 4)</span>
+  </button>
+
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="checklist">
+    <i class="fa-solid fa-list-check text-blue-800"></i>
+    <span>Statutory Checklist</span>
+  </button>
+  
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="decision">
+    <i class="fa-solid fa-gavel text-blue-800"></i>
+    <span>Officer Decision Workspace</span>
+  </button>
+  
+  <button class="tab-btn py-3 text-xs flex items-center gap-1.5 whitespace-nowrap" data-tab="audit">
+    <i class="fa-solid fa-fingerprint text-blue-800"></i>
+    <span>Audit Trail</span>
+  </button>
+</div>

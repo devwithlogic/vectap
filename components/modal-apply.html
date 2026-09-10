@@ -1,0 +1,155 @@
+<!-- Modal 3: Bidder Application & Pre-Verification Portal -->
+<div id="applyTenderModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-stone-300">
+    
+    <!-- Modal Header -->
+    <div class="p-5 border-b border-slate-200 flex items-start justify-between bg-gradient-to-r from-blue-950 to-blue-900 text-white">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="bg-amber-400 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase">Bidder Portal</span>
+          <span class="text-xs text-blue-200 font-mono">Tender GEM/2026/B/892104</span>
+        </div>
+        <h3 class="font-black text-lg text-white mt-1">Apply for Tender &amp; Zero-Upload Verification</h3>
+        <p class="text-xs text-blue-200 mt-0.5">Automated AI Pre-Screening against 12 statutory government databases.</p>
+      </div>
+      <button id="closeApplyModalBtn" class="text-blue-200 hover:text-white text-xl px-2 font-bold">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Modal Body (Form) -->
+    <div class="p-6 overflow-y-auto flex-1 space-y-5 text-xs">
+      <!-- Tender Notice -->
+      <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 flex items-start gap-3">
+        <i class="fa-solid fa-circle-info text-blue-800 text-sm mt-0.5"></i>
+        <div>
+          <span class="font-bold text-blue-950">Procuring Entity:</span>
+          <span class="text-blue-900"> National Informatics Centre Services Inc. (NICSI) / MeitY</span>
+          <div class="mt-1 text-[11px] text-slate-600 flex flex-wrap gap-x-4">
+            <span><strong>Tender Value:</strong> ₹ 18.50 Cr</span>
+            <span><strong>MII Mandate:</strong> Class-I Local Supplier (≥ 50%)</span>
+            <span><strong>EMD:</strong> ₹ 37.0 Lakhs (MSME Exempt)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1: Entity Identifiers -->
+      <div>
+        <h4 class="font-bold text-xs uppercase tracking-wider text-rust-900 mb-3 flex items-center gap-1.5 border-b border-stone-200 pb-1.5">
+          <i class="fa-solid fa-building text-rust-600"></i> 1. Bidder Enterprise & Statutory Identifiers
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyCompanyName">Legal Entity Name *</label>
+            <input id="applyCompanyName" type="text" value="Zenith Infra-Tech Systems Pvt Ltd" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 text-xs bg-stone-50" placeholder="Entity name" required />
+          </div>
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyEntityType">Enterprise Classification *</label>
+            <select id="applyEntityType" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 text-xs bg-stone-50">
+              <option value="Private Limited Company">Private Limited Company</option>
+              <option value="Public Limited Company">Public Limited Company</option>
+              <option value="Micro / Small Enterprise (MSME - Udyam)" selected>Micro / Small Enterprise (MSME - Udyam)</option>
+              <option value="DPIIT Recognized Startup">DPIIT Recognized Startup</option>
+              <option value="Partnership / LLP">Partnership / LLP</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyGSTIN">GSTIN (15 Digits) *</label>
+            <input id="applyGSTIN" type="text" value="07AAECZ9123M1Z8" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="GSTIN" required />
+          </div>
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyPAN">Corporate PAN *</label>
+            <input id="applyPAN" type="text" value="AAECZ9123M" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="PAN" required />
+          </div>
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyUdyam">Udyam Registration No. (For MSME Exemption)</label>
+            <input id="applyUdyam" type="text" value="UDYAM-DL-03-0099881" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="Udyam No." />
+          </div>
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyCIN">Company CIN (MCA21)</label>
+            <input id="applyCIN" type="text" value="U72900DL2022PTC394812" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" placeholder="CIN" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Declarations & Commercial Quote -->
+      <div>
+        <h4 class="font-bold text-xs uppercase tracking-wider text-rust-900 mb-3 flex items-center gap-1.5 border-b border-stone-200 pb-1.5">
+          <i class="fa-solid fa-file-invoice-dollar text-rust-600"></i> 2. Commercial Quote & Make-in-India Declaration
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyBidQuote">Total Financial Bid Quote (₹) *</label>
+            <input id="applyBidQuote" type="text" value="₹ 17,25,00,000" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" required />
+            <span class="text-[10px] text-stone-500 mt-0.5 block">Estimated Tender Value: ₹ 18.50 Cr</span>
+          </div>
+          <div>
+            <label class="block font-semibold text-stone-700 mb-1" for="applyLocalContent">Self-Declared Local Content (%) *</label>
+            <input id="applyLocalContent" type="number" min="0" max="100" value="68" class="w-full p-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-rust-500 font-mono text-xs bg-stone-50" required />
+            <span class="text-[10px] text-emerald-700 font-medium mt-0.5 block">Class-I Local Supplier (≥ 50% threshold met)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Statutory Document Uploads (USP 5: Zero-Upload Architecture) -->
+      <div>
+        <div class="flex flex-wrap items-center justify-between mb-2.5 border-b border-slate-200 pb-1.5 gap-2">
+          <div class="flex items-center gap-2">
+            <h4 class="font-bold text-xs uppercase tracking-wider text-blue-950 flex items-center gap-1.5">
+              <i class="fa-solid fa-cloud-arrow-down text-blue-700"></i> 3. Zero-Upload Architecture (DigiLocker / UDIN)
+            </h4>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-300">USP 5: 100% Tamper-Proof</span>
+          </div>
+          <button type="button" id="btnAutoFetchDigilocker" class="text-white font-bold flex items-center gap-1 text-[11px] bg-blue-900 hover:bg-blue-800 px-2.5 py-1 rounded shadow-xs transition">
+            <i class="fa-solid fa-bolt text-amber-400"></i> Auto-Fetch via DigiLocker
+          </button>
+        </div>
+        <p class="text-[11px] text-slate-500 mb-2">Bidders do not need to upload unverified PDFs. Credentials are pulled directly from DigiLocker PKI, UDIN (ICAI), and Udyam to eliminate forgery.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+          <div class="p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 flex items-center justify-between">
+            <span class="font-medium text-slate-800"><i class="fa-solid fa-file-shield text-emerald-700 mr-1.5"></i>Udyam Certificate</span>
+            <span class="text-[10px] text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">API Synced</span>
+          </div>
+          <div class="p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 flex items-center justify-between">
+            <span class="font-medium text-slate-800"><i class="fa-solid fa-file-shield text-emerald-700 mr-1.5"></i>GST Registration</span>
+            <span class="text-[10px] text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">API Synced</span>
+          </div>
+          <div class="p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 flex items-center justify-between">
+            <span class="font-medium text-slate-800"><i class="fa-solid fa-file-shield text-emerald-700 mr-1.5"></i>MII CA Certificate</span>
+            <span class="text-[10px] text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">UDIN Verified</span>
+          </div>
+          <div class="p-2 rounded-lg border border-emerald-200 bg-emerald-50/50 flex items-center justify-between">
+            <span class="font-medium text-slate-800"><i class="fa-solid fa-file-shield text-emerald-700 mr-1.5"></i>OEM MAF Form</span>
+            <span class="text-[10px] text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded border border-emerald-300">PKI Signed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Pre-Check Diagnostic Box -->
+      <div class="p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 via-white to-emerald-50 border border-emerald-200">
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold flex-shrink-0">
+            <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-xs text-emerald-900">VECTA AI Instant Pre-Check Prediction: 94% Pass Probability</h5>
+            <p class="text-[11px] text-stone-600 mt-0.5 leading-relaxed">
+              Your declared GSTIN, Udyam registration, and 68% Make-in-India content satisfy all mandatory statutory thresholds for Tender GEM/2026/B/892104. Zero debarment records found.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="p-4 border-t border-stone-200 flex items-center justify-between bg-stone-50">
+      <span class="text-[11px] text-stone-500 font-mono"><i class="fa-solid fa-lock mr-1 text-rust-600"></i> e-Sign: IT Act 2000</span>
+      <div class="flex items-center gap-2.5">
+        <button type="button" id="cancelApplyBtn" class="px-4 py-2 rounded-lg border border-stone-300 text-stone-700 hover:bg-stone-100 text-xs font-semibold">Cancel</button>
+        <button type="button" id="submitApplyBidBtn" class="px-5 py-2.5 rounded-lg bg-rust-700 hover:bg-rust-800 text-white text-xs font-bold shadow-md flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane text-amber-300"></i><span>Submit Bid & Run Verification</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

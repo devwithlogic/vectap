@@ -1,0 +1,86 @@
+/* ==========================================================================
+   VECTA: Design System Variables & Color Tokens
+   Indian GovTech Deep Navy & Saffron Gold Palette
+   ========================================================================== */
+
+:root {
+  /* Primary Indian GovTech Deep Navy */
+  --navy-950: #051426;
+  --navy-900: #081D38;
+  --navy-850: #0B2545; /* Core Navbar & Header */
+  --navy-800: #0F3057; /* Hero Primary Background */
+  --navy-700: #133E87; /* Active Elements & Accents */
+  --navy-600: #1D4ED8;
+  --navy-500: #2563EB;
+  --navy-200: #BFDBFE;
+  --navy-100: #DBEAFE;
+  --navy-50: #EFF6FF;
+
+  /* Saffron Gold & Amber Highlights */
+  --saffron-600: #B45309;
+  --saffron-500: #D97706; /* Core Action Buttons & Highlights */
+  --saffron-400: #F59E0B;
+  --saffron-300: #FBBF24;
+  --saffron-100: #FEF3C7;
+  --saffron-50: #FFFBEB;
+
+  /* Crisp GovTech White & Clean Slate */
+  --gov-white: #FFFFFF;
+  --gov-slate-50: #F8FAFC;
+  --gov-slate-100: #F1F5F9;
+  --gov-slate-200: #E2E8F0;
+  --gov-slate-300: #CBD5E1;
+  --gov-slate-600: #475569;
+  --gov-slate-700: #334155;
+  --gov-slate-800: #1E293B;
+  --gov-slate-900: #0F172A;
+
+  /* Semantic Aliases for Compatibility */
+  --warm-white: #FFFFFF;
+  --silk-pearl: #F8FAFC;
+  --alabaster: #F1F5F9;
+  --oat-light: #E2E8F0;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --text-rust: #0B2545;
+  --accent-gold: #D97706;
+  --accent-amber: #F59E0B;
+
+  /* Legacy aliases mapping to Navy/Saffron */
+  --rust-900: #081D38;
+  --rust-800: #0B2545;
+  --rust-700: #0F3057;
+  --rust-600: #133E87;
+  --rust-500: #1D4ED8;
+  --rust-400: #2563EB;
+  --rust-300: #93C5FD;
+  --rust-200: #BFDBFE;
+  --rust-100: #DBEAFE;
+  --rust-50: #EFF6FF;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px -1px rgba(11, 37, 69, 0.08), 0 2px 4px -2px rgba(11, 37, 69, 0.05);
+  --shadow-lg: 0 12px 28px -4px rgba(11, 37, 69, 0.12), 0 4px 8px -2px rgba(11, 37, 69, 0.06);
+  --shadow-xl: 0 20px 35px -6px rgba(11, 37, 69, 0.20);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--gov-slate-50);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--gov-slate-100); }
+::-webkit-scrollbar-thumb { background: var(--navy-200); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--navy-500); }

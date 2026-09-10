@@ -1,0 +1,92 @@
+<!-- Offcanvas Side Drawer (Triggered by 3-dot ⊞ button) -->
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+
+<ASIDE id="offcanvasDrawer" class="offcanvas-drawer" aria-label="VECTA Intelligence Suite">
+  <!-- Header -->
+  <div class="drawer-header flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-lg bg-blue-900 border border-blue-600 flex items-center justify-center text-amber-400 font-bold text-sm">
+        <i class="fa-solid fa-layer-group"></i>
+      </div>
+      <div>
+        <h3 class="text-sm font-bold text-white tracking-wide">VECTA Intelligence Suite</h3>
+        <p class="text-[10px] text-blue-200">Advanced Anti-Fraud & USP Tools</p>
+      </div>
+    </div>
+    <button id="btnCloseDrawer" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+      <i class="fa-solid fa-xmark text-sm"></i>
+    </button>
+  </div>
+
+  <!-- Drawer Body Navigation -->
+  <div class="p-4 flex-1 overflow-y-auto space-y-4">
+    <!-- USP Quick Navigation -->
+    <div>
+      <h4 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">Flagship USP Modules</h4>
+      <div class="space-y-1">
+        <button id="drawerNavCollusion" class="drawer-nav-item w-full text-left">
+          <i class="fa-solid fa-circle-nodes text-rose-500 w-5 text-center"></i>
+          <span class="flex-1 text-xs">Collusion & Cartel Radar</span>
+          <span class="drawer-badge bg-rose-100 text-rose-700 border border-rose-200">USP 1</span>
+        </button>
+
+        <button id="drawerNavXAI" class="drawer-nav-item w-full text-left">
+          <i class="fa-solid fa-brain text-blue-600 w-5 text-center"></i>
+          <span class="flex-1 text-xs">Explainable AI (XAI)</span>
+          <span class="drawer-badge bg-blue-100 text-blue-700 border border-blue-200">USP 2</span>
+        </button>
+
+        <button id="drawerNavForgery" class="drawer-nav-item w-full text-left">
+          <i class="fa-solid fa-fingerprint text-purple-600 w-5 text-center"></i>
+          <span class="flex-1 text-xs">Document Forgery Forensics</span>
+          <span class="drawer-badge bg-purple-100 text-purple-700 border border-purple-200">USP 3</span>
+        </button>
+
+        <button id="drawerNavLifecycle" class="drawer-nav-item w-full text-left">
+          <i class="fa-solid fa-timeline text-amber-600 w-5 text-center"></i>
+          <span class="flex-1 text-xs">Post-Award Lifecycle</span>
+          <span class="drawer-badge bg-amber-100 text-amber-700 border border-amber-200">USP 4</span>
+        </button>
+
+        <button id="drawerNavZeroUpload" class="drawer-nav-item w-full text-left">
+          <i class="fa-solid fa-cloud-arrow-down text-emerald-600 w-5 text-center"></i>
+          <span class="flex-1 text-xs">Zero-Upload (DigiLocker)</span>
+          <span class="drawer-badge bg-emerald-100 text-emerald-700 border border-emerald-200">USP 5</span>
+        </button>
+
+        <button id="drawerNavChatbot" class="drawer-nav-item w-full text-left">
+          <i class="fa-solid fa-language text-indigo-600 w-5 text-center"></i>
+          <span class="flex-1 text-xs">Multilingual MSME Bot</span>
+          <span class="drawer-badge bg-indigo-100 text-indigo-700 border border-indigo-200">USP 7</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Portals Status -->
+    <div class="pt-2 border-t border-slate-200">
+      <h4 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">System Telemetry</h4>
+      <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs space-y-2">
+        <div class="flex items-center justify-between text-slate-600">
+          <span>Active Portals Connected:</span>
+          <span class="font-bold text-emerald-600 font-mono">12 / 12 (100%)</span>
+        </div>
+        <div class="flex items-center justify-between text-slate-600">
+          <span>Avg Latency:</span>
+          <span class="font-mono text-slate-700 font-semibold">42 ms</span>
+        </div>
+        <div class="flex items-center justify-between text-slate-600">
+          <span>PKI / DSC Trust Store:</span>
+          <span class="text-emerald-700 font-semibold">CCA India Online</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="p-4 border-t border-slate-200 bg-slate-50 text-center">
+    <button id="drawerBtnRunAudit" class="w-full py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm">
+      <i class="fa-solid fa-shield-halved text-amber-400"></i>
+      <span>Run Comprehensive Fraud Audit</span>
+    </button>
+  </div>
+</ASIDE>

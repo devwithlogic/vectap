@@ -1,0 +1,143 @@
+/* ==========================================================================
+   VECTA: Component Styles
+   Bidder Cards, Badges, Tabs, Discrepancies, and Officer Seal
+   ========================================================================== */
+
+/* Bidder Card States */
+.bidder-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid var(--gov-slate-200);
+  background: var(--gov-white);
+}
+
+.bidder-card:hover {
+  border-color: var(--navy-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.bidder-card.active {
+  border-color: var(--navy-700);
+  background: linear-gradient(to right, #FFFFFF, var(--navy-50));
+  box-shadow: 0 0 0 2px var(--navy-200), var(--shadow-md);
+}
+
+/* Tabs */
+.tab-btn {
+  position: relative;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: var(--gov-slate-600);
+}
+
+.tab-btn:hover {
+  color: var(--navy-850);
+}
+
+.tab-btn.active {
+  color: var(--navy-850);
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--navy-700);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Portal Indicator Ribbon */
+.portal-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--gov-white);
+  border: 1px solid var(--gov-slate-200);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.portal-badge:hover {
+  border-color: var(--navy-500);
+  transform: translateY(-1px);
+}
+
+/* Risk Badges */
+.badge-low-risk {
+  background-color: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.badge-med-risk {
+  background-color: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.badge-high-risk {
+  background-color: #FEF2F2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+
+.badge-critical-risk {
+  background-color: #7F1D1D;
+  color: #FEF2F2;
+  border: 1px solid #991B1B;
+}
+
+/* Discrepancy Highlight Card */
+.discrepancy-card {
+  background: #FFFFFF;
+  border-left: 4px solid var(--saffron-500);
+  border-top: 1px solid var(--gov-slate-200);
+  border-right: 1px solid var(--gov-slate-200);
+  border-bottom: 1px solid var(--gov-slate-200);
+}
+
+/* Audit Log Timeline Line */
+.timeline-stem {
+  position: absolute;
+  top: 14px;
+  bottom: -14px;
+  left: 15px;
+  width: 2px;
+  background-color: var(--gov-slate-200);
+}
+
+/* Procurement Officer Seal Stamp Effect */
+.officer-seal {
+  display: inline-block;
+  border: 2px dashed var(--navy-700);
+  color: var(--navy-850);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+}
+
+/* Real-Time Confidence Pill */
+.confidence-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: var(--navy-50);
+  color: var(--navy-700);
+  border: 1px solid var(--navy-200);
+  font-weight: 500;
+}
